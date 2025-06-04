@@ -25,9 +25,7 @@
 
 ## 📦 Architecture
 
-User → (sends email) to Postmark → Next.js Webhook → GPT-4.1 (GitHub) → Mailo
-↓
-Nodemailer replies
+User → (sends email) to Postmark → Next.js Webhook → GPT-4.1 (GitHub) → Mailo Nodemailer → replies
 
 ## 🚀 Getting Started
 
