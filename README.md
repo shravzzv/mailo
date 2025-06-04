@@ -27,6 +27,13 @@
 
 User → (sends email) to Postmark → Next.js Webhook → GPT-4.1 (GitHub) → Mailo Nodemailer → replies
 
+## 🧪 Testing the App
+
+1. Click the **Send Email** button on the landing page. 📧
+2. Send an email to the pre-configured address with a clear subject (your question) and detailed body (extra info). 📝
+3. Wait a few seconds. ⏳
+4. Check your inbox—you’ll receive a helpful, AI-generated reply to your query! 📬
+
 ## 🚀 Getting Started
 
 ### 1. Clone the Repo
