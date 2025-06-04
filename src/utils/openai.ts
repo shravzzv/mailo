@@ -34,9 +34,7 @@ export async function chat(subject: string, body: string) {
     console.error('Error querying GPT:', err)
     return {
       subject: `Re: ${subject}`,
-      body: 'Sorry, there was an error processing your request.',
+      body: `Hi,\n\nMailo is currently handling too many requests and can't process your message right now.\n\nWe're limited to 15 requests per minute and 150 per day. Please try again in a few minutes or later today.\n\nThanks for your patience!\n- Mailo ✉️`,
     }
   }
 }
-
-// todo: figure out what to send when the daily/minute limit is reached. Send an approriate resopnse.

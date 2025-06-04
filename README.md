@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📬 Mailo
 
-## Getting Started
+**Mailo** is a lightweight AI-powered email assistant that works entirely over email. No apps. No logins. Just send an email and get smart, context-aware replies delivered straight to your inbox — powered by GPT.
 
-First, run the development server:
+> Built for the [dev.to Postmark Challenge: Inbox Innovators](https://dev.to/challenges/postmark).
+
+## ✨ Features
+
+- 📩 **Email-first Interface** — Just send an email to interact, no account needed.
+- 🧠 **GPT-Powered Intelligence** — Smart, human-like responses tailored to your message.
+- ⚡ **Fast & Lightweight** — No bloated UI, just good old email.
+- 🛡️ **Privacy-first** — Only the message content is used to generate replies.
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech                           | Role                      |
+| ------------------------------ | ------------------------- |
+| **Next.js 15**                 | API routes + landing page |
+| **Postmark**                   | Inbound email parsing     |
+| **Nodemailer**                 | Sending reply emails      |
+| **OpenAI (via GitHub Models)** | LLM backend               |
+| **TypeScript**                 | Type safety               |
+
+## 📦 Architecture
+
+User → (sends email) to Postmark → Next.js Webhook → GPT-4.1 (GitHub) → Mailo
+↓
+Nodemailer replies
+
+## 🚀 Getting Started
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/shravzzv/mailo.git
+cd mailo
+npm install
+```
+
+### 2. Setup Environment Variables
+
+Create a `.env` file and add:
+
+```env
+GITHUB_TOKEN=your_github_models_token
+MAIL_USER=your_email@gmail.com
+MAIL_PASSWORD=your_email_app_password
+```
+
+### 3. Run Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📬 How It Works
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. A user sends an email to a Mailo-linked address.
+2. Postmark parses it and hits a webhook hosted in your Next.js app.
+3. The webhook extracts the subject + body, and sends it to GPT.
+4. GPT generates a concise, email-style reply.
+5. Nodemailer sends this reply back to the user.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 💡 Rate Limit Handling
 
-## Learn More
+Mailo uses GitHub-hosted OpenAI models, which have a **15 requests/minute** and **150 requests/day** limit.
 
-To learn more about Next.js, take a look at the following resources:
+If the limit is hit:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Users receive a graceful fallback response via email.
+- Error is logged to the console, but doesn't crash the server.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✍️ Writing Style for GPT
 
-## Deploy on Vercel
+The assistant is instructed to:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Respond like a helpful human email assistant.
+- Avoid greetings/sign-offs unless explicitly prompted.
+- Be polite, concise, and helpful.
+- Skip subject line formatting — that’s handled in code.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛡️ Deployment & Hosting
+
+- Deploy your app on **Vercel**
+- Use **Postmark** for production-grade email parsing
+- Enable **Gmail SMTP** (via App Passwords) for Nodemailer
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first.
+
+1. Fork the repo
+2. Create a feature branch
+3. Make changes
+4. Submit a PR
+
+## 📄 License
+
+MIT License. Feel free to fork and modify Mailo for your own AI tools.
