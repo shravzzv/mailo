@@ -33,7 +33,7 @@ export default function Home() {
         </main>
       </BackgroundLines>
 
-      <section className='mb-40 mt-80 md:mt-0 sm:px-4 md:px-0'>
+      <section className='mb-40 mt-80 md:mt-0 px-4 md:px-0'>
         <h2 className='text-center text-3xl font-bold mb-6'>FAQ</h2>
         <div className='flex items-center justify-center'>
           <Accordion type='single' collapsible className='w-full max-w-2xl'>
@@ -103,6 +103,22 @@ export default function Home() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+      </section>
+
+      <section className='mb-40'>
+        <h2 className='text-center text-3xl font-bold mb-6'>How it works?</h2>
+        <div className='flex items-center justify-center'>
+          <iframe
+            width='840'
+            height='473'
+            src='https://www.youtube.com/embed/8BE1zcoQmKU?si=Dg-58DUDaBcorFqB'
+            title='YouTube video player'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            referrerPolicy='strict-origin-when-cross-origin'
+            allowFullScreen
+            className='rounded-lg shadow-2xl'
+          ></iframe>
         </div>
       </section>
     </>
