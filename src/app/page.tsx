@@ -1,103 +1,126 @@
-import Image from "next/image";
+import { BackgroundLines } from '@/components/ui/background-lines'
+import { Button } from '@/components/ui/button'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <BackgroundLines>
+        <main className='text-center space-y-5 min-h-screen flex flex-col items-center justify-center'>
+          <h1 className='text-3xl px-6 font-black md:text-4xl lg:text-7xl lg:pb-2 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent'>
+            Email conversations, now supercharged with AI.
+          </h1>
+          <p className='px-4'>
+            Send a question. Get an intelligent reply. No logins. No apps. Just
+            email magic powered by{' '}
+            <strong className='text-yellow-300 text-shadow-xs'>Postmark</strong>{' '}
+            and ChatGPT.
+          </p>
+          <Button variant={'outline'} asChild className='z-1'>
+            <a
+              href='mailto:246d8fbcfcf4085c30789eecd2cdb273@inbound.postmarkapp.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Try it out
+            </a>
+          </Button>
+        </main>
+      </BackgroundLines>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className='mb-40 mt-80 md:mt-0 px-4 md:px-0'>
+        <h2 className='text-center text-3xl font-bold mb-6'>FAQ</h2>
+        <div className='flex items-center justify-center'>
+          <Accordion type='single' collapsible className='w-full max-w-2xl'>
+            <AccordionItem value='item-1'>
+              <AccordionTrigger>How does Mailo work?</AccordionTrigger>
+              <AccordionContent>
+                Mailo lets you interact with an AI assistant entirely through
+                email. Just send a question to the provided email address. After
+                a few seconds, you&apos;ll get a smart reply powered by GPT — no
+                login, no app needed.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value='item-2'>
+              <AccordionTrigger>
+                What kind of questions can I ask?
+              </AccordionTrigger>
+              <AccordionContent>
+                Anything you&apos;d ask a helpful assistant — from technical
+                queries and summaries to travel tips and writing help. Keep the
+                subject line short and use the body to give more context.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value='item-3'>
+              <AccordionTrigger>
+                Can I reply to the AI&apos;s email to continue the conversation?
+              </AccordionTrigger>
+              <AccordionContent>
+                Not yet. Replying directly to continue the thread is a planned
+                feature. For now, you&apos;ll need to start a new email for each
+                question.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value='item-4'>
+              <AccordionTrigger>
+                Do I need to create an account?
+              </AccordionTrigger>
+              <AccordionContent>
+                Nope. There are no logins, accounts, or installations required.
+                Just use your existing email client.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value='item-5'>
+              <AccordionTrigger>How fast will I get a reply?</AccordionTrigger>
+              <AccordionContent>
+                Typically within 10-20 seconds. If there&apos;s high demand or a
+                temporary issue with the AI backend, it may take a bit longer.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value='item-6'>
+              <AccordionTrigger>Is my data private?</AccordionTrigger>
+              <AccordionContent>
+                Yes. Only the email content is used to generate a reply. We
+                don’t store your emails, and no data is used for training.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value='item-7'>
+              <AccordionTrigger>Can I send attachments?</AccordionTrigger>
+              <AccordionContent>
+                Mailo currently does not support handling file attachments. It
+                only reads plain text from your email subject and body.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+
+      <section className='mb-40'>
+        <h2 className='text-center text-3xl font-bold mb-6'>How it works?</h2>
+        <div className='flex items-center justify-center'>
+          <iframe
+            width='840'
+            height='473'
+            src='https://www.youtube.com/embed/8BE1zcoQmKU?si=Dg-58DUDaBcorFqB'
+            title='YouTube video player'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            referrerPolicy='strict-origin-when-cross-origin'
+            allowFullScreen
+            className='rounded-lg shadow-2xl'
+          ></iframe>
+        </div>
+      </section>
+    </>
+  )
 }

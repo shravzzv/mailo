@@ -1,6 +1,6 @@
 # 📬 Mailo
 
-**Mailo** is a lightweight AI-powered email assistant that works entirely over email. No apps. No logins. Just send an email and get smart, context-aware replies delivered straight to your inbox — powered by GPT.
+[**Mailo**](https://mailo-nine.vercel.app/) is a lightweight AI-powered email assistant that works entirely over email. No apps. No logins. Just send an email and get smart, context-aware replies delivered straight to your inbox — powered by GPT.
 
 > Built for the [dev.to Postmark Challenge: Inbox Innovators](https://dev.to/challenges/postmark).
 
@@ -25,9 +25,16 @@
 
 ## 📦 Architecture
 
-User → (sends email) to Postmark → Next.js Webhook → GPT-4.1 (GitHub) → Mailo
-↓
-Nodemailer replies
+User → (sends email) to Postmark → Next.js Webhook → GPT-4.1 (GitHub) → Mailo Nodemailer → replies
+
+## 🧪 Testing the App
+
+1. Click the **Send Email** button on the landing page. 📧
+2. Send an email to the pre-configured address with a clear subject (your question) and detailed body (extra info). 📝
+3. Wait a few seconds. ⏳
+4. Check your inbox—you’ll receive a helpful, AI-generated reply to your query! 📬
+
+> ⚠️ You cannot reply directly to the AI’s response email yet to continue the conversation—this feature is still in development. To ask more questions, please use the recipient’s email provided on the landing page.
 
 ## 🚀 Getting Started
 
