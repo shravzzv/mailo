@@ -112,7 +112,7 @@ export default function Home() {
           <iframe
             width='840'
             height='473'
-            src='https://www.youtube.com/embed/8BE1zcoQmKU?si=Dg-58DUDaBcorFqB'
+            src='https://www.youtube-nocookie.com/embed/nVioJDJ59EM?si=juEXyKCwgX-ipmcD'
             title='YouTube video player'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
             referrerPolicy='strict-origin-when-cross-origin'
