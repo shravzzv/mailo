@@ -23,7 +23,7 @@ export default function Home() {
           </p>
           <Button variant={'outline'} asChild className='z-1'>
             <a
-              href='mailto:246d8fbcfcf4085c30789eecd2cdb273@inbound.postmarkapp.com'
+              href='mailto:contact@shravzzv.tech'
               target='_blank'
               rel='noopener noreferrer'
             >
