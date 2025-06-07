@@ -29,12 +29,13 @@ User → (sends email) to Postmark → Next.js Webhook → GPT-4.1 (GitHub) → 
 
 ## 🧪 Testing the App
 
-1. Click the **Send Email** button on the landing page. 📧
+1. Click the **Try it out** button on the landing page. 📧
 2. Send an email to the pre-configured address with a clear subject (your question) and detailed body (extra info). 📝
 3. Wait a few seconds. ⏳
 4. Check your inbox—you’ll receive a helpful, AI-generated reply to your query! 📬
+5. You can **reply directly** to the AI’s response email to continue the conversation. 📣
 
-> ⚠️ You cannot reply directly to the AI’s response email yet to continue the conversation—this feature is still in development. To ask more questions, please use the recipient’s email provided on the landing page.
+> 💡 Feel free to keep the conversation going—just hit "Reply" on any AI-generated response.
 
 ## 🚀 Getting Started
 
@@ -52,8 +53,8 @@ Create a `.env` file and add:
 
 ```env
 GITHUB_TOKEN=your_github_models_token
-MAIL_USER=your_email@gmail.com
-MAIL_PASSWORD=your_email_app_password
+MAIL_USER=your_email@mail.com
+MAIL_PASSWORD=your_email_password
 ```
 
 ### 3. Run Locally
@@ -92,7 +93,6 @@ The assistant is instructed to:
 
 - Deploy your app on **Vercel**
 - Use **Postmark** for production-grade email parsing
-- Enable **Gmail SMTP** (via App Passwords) for Nodemailer
 
 ## 🤝 Contributing
 
