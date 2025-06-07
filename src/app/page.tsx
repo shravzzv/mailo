@@ -23,7 +23,7 @@ export default function Home() {
           </p>
           <Button variant={'outline'} asChild className='z-1'>
             <a
-              href='mailto:246d8fbcfcf4085c30789eecd2cdb273@inbound.postmarkapp.com'
+              href='mailto:contact@shravzzv.tech'
               target='_blank'
               rel='noopener noreferrer'
             >
@@ -63,9 +63,9 @@ export default function Home() {
                 Can I reply to the AI&apos;s email to continue the conversation?
               </AccordionTrigger>
               <AccordionContent>
-                Not yet. Replying directly to continue the thread is a planned
-                feature. For now, you&apos;ll need to start a new email for each
-                question.
+                Yes! You can reply directly to the AI&apos;s email to continue
+                the conversation seamlessly. Just respond to the email you
+                received, and the AI will pick up right where you left off.
               </AccordionContent>
             </AccordionItem>
 
@@ -91,7 +91,7 @@ export default function Home() {
               <AccordionTrigger>Is my data private?</AccordionTrigger>
               <AccordionContent>
                 Yes. Only the email content is used to generate a reply. We
-                don’t store your emails, and no data is used for training.
+                don&apos;t store your emails, and no data is used for training.
               </AccordionContent>
             </AccordionItem>
 
