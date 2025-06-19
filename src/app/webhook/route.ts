@@ -5,6 +5,7 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(req: NextRequest) {
   try {
     const payload = await req.json()
+    console.log(payload)
     const fromEmail = payload.From
     const subject = payload.Subject
     const body = payload.TextBody || payload.HtmlBody || '(no content)'
